@@ -1,7 +1,7 @@
 ## Sorting visualiser with Python
 #### Demo
-![](./demo/bubble.gif)
-
+<img src="./demo_gif/bubble.gif" width="30%" height="30%"> <img src="./demo_gif/heap.gif" width="30%" height="30%"> <br>
+<img src="./demo_gif/insertion.gif" width="30%" height="30%"> <img src="./demo_gif/merge.gif" width="30%" height="30%">
 #### To run
 1. Clone my project. ```git clone https://github.com/alxojy/sorting-visualiser.git```
 2. Make sure that you have matplotlib installed. If not, refer to dependencies.
