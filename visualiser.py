@@ -18,15 +18,21 @@ import re
 from matplotlib import pyplot as plt
 import matplotlib.animation as animation
 
-
+# ref: https://github.com/nrsyed/sorts/blob/master/python/sorts.py
 def update_fig(A, rects, iteration):
     for rect, val in zip(rects, randomlist):
         rect.set_height(val)
         iteration[0] += 1
 
+def animate(title, args, sort_func):
+    ax.set_title(title)
+    anim = animation.FuncAnimation(fig, func=update_fig,
+    fargs=args, frames=sort_func, interval=100,
+    repeat=False)
+    plt.show()
+
 if __name__ == "__main__":
     while True:
-
         randomlist = []
         n = 30
         for i in range(0, n):
@@ -44,65 +50,29 @@ if __name__ == "__main__":
 
         # sorting options
         if sort_option.upper() == 'A':
-            ax.set_title("Bubble Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=bubble_sort(randomlist), interval=100,
-            repeat=False)
-
-            plt.show()
+            animate("Bubble Sort", (bar_rects, iteration), bubble_sort(randomlist))
 
         elif sort_option.upper() == 'B':
-            ax.set_title("Heap Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=heap_sort(randomlist), interval=100,
-            repeat=False)
-            plt.show()
+            animate("Heap Sort", (bar_rects, iteration), heap_sort(randomlist))
 
         elif sort_option.upper() == 'C':
-            ax.set_title("Insertion Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=insertion_sort(randomlist), interval=100,
-            repeat=False)
-            plt.show()
+            animate("Insertion Sort", (bar_rects, iteration), insertion_sort(randomlist))
 
         elif sort_option.upper() == 'D':
-            ax.set_title("Merge Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=merge_sort(randomlist,0,n-1), interval=50,
-            repeat=False)
-            plt.show()
+            animate("Merge Sort", (bar_rects, iteration), merge_sort(randomlist))
 
         elif sort_option.upper() == 'E':
-            ax.set_title("Quick Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=quick_sort(randomlist,0,n-1), interval=100,
-            repeat=False)
-            plt.show()
+            animate("Quick Sort", (bar_rects, iteration), quick_sort(randomlist))
         
         elif sort_option.upper() == 'F':
-            ax.set_title("Radix Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=radix_sort(randomlist), interval=100,
-            repeat=False)
-            plt.show()
+            animate("Selection Sort", (bar_rects, iteration), selection_sort(randomlist))
         
         elif sort_option.upper() == 'G':
-            ax.set_title("Selection Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=selection_sort(randomlist), interval=100,
-            repeat=False)
-            plt.show()
-        
-        elif sort_option.upper() == 'H':
-            ax.set_title("Shell Sort")
-            anim = animation.FuncAnimation(fig, func=update_fig,
-            fargs=(bar_rects, iteration), frames=shell_sort(randomlist), interval=100,
-            repeat=False)
-            plt.show()
+            animate("Shell Sort", (bar_rects, iteration), shell_sort(randomlist))
         
         elif sort_option.upper() == 'Q':
             quit()
-        
+            
         else:
             pass
         
