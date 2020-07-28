@@ -1,5 +1,6 @@
-# Sorting visualiser with Python
+## Sorting visualiser with Python
 #### Demo
+![](./demo/bubble.gif)
 
 #### To run
 1. Clone my project. ```git clone https://github.com/alxojy/sorting-visualiser.git```
