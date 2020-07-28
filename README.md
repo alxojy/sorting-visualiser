@@ -1,4 +1,6 @@
 ## Sorting visualiser with Python
+With 7 different sorting algorithms to visualise!
+
 #### Demo
 <img src="./demo_gif/bubble.gif" width="30%" height="30%"> <img src="./demo_gif/heap.gif" width="30%" height="30%"> <br>
 <img src="./demo_gif/insertion.gif" width="30%" height="30%"> <img src="./demo_gif/merge.gif" width="30%" height="30%">
