@@ -9,6 +9,7 @@
 
 #### Dependencies
 ```matplotlib```
+
 To install matplotlib, run ```pip3 install matplotlib``` in your terminal if you're using ```python 3.x```. 
 
 #### Sorting algorithms
